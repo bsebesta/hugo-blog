@@ -1,9 +1,7 @@
-baseurl = "/"
+baseURL = "http://example.org/"
 languageCode = "en-us"
-languageLang = "en"
-title = "Homepage"
+title = "My New Hugo Site"
 
-# RSS, categories and tags disabled for an easy start
-# See configuration options for more details: 
-# https://gohugo.io/getting-started/configuration/#toml-configuration
-disableKinds = ["RSS", "taxonomy", "taxonomyTerm"]
+[taxonomies]
+  category = "categories"
+  tag = "tags"

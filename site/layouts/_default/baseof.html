@@ -1,17 +1,55 @@
-<!doctype html>
-<html lang="{{ $.Site.Language.Lang }}">
-  {{ partial "head" . }}
-  <body class="sans-serif">
+<!DOCTYPE html>
+<html lang="en">
 
-    {{ block "header" . }}{{ partial "nav" . }}{{end}}
+<head>
 
-    {{ block "main" . }}{{ end }}
+    <!-- Title -->
+    <title>
+        {{ block "title" . }}
+        <!-- Blocks may include default content. -->
+        {{ .Site.Title }}
+        {{ end }}
+    </title>
 
-    {{ block "footer" . }}{{ partial "footer" . }}{{end}}
+    <!-- Meta Information -->
+    <meta charset="utf-8" />
+    <meta name="author" content="Bryan Sebesta">
+    <meta name="description" content="Created X/X/X">
 
-    {{ $script := .Site.Data.webpack.main }}
-    {{ with $script.js }}
-      <script src="{{ relURL . }}"></script>
-    {{ end }}
-  </body>
+    <!-- Styles -->
+    <link rel="stylesheet" href="https://use.typekit.net/xkp8ekj.css">
+    <link rel="stylesheet" href="/css/style.css?3">
+
+    <!-- Feeds -->
+    <link type="application/atom+xml" rel="alternate" href="/feed.xml" title="Blog" />
+    <link type="application/atom+xml" rel="alternate" href="/feeds/religion.xml" title="Bryan on Religion" />
+
+</head>
+
+<body id="default-layout">
+
+
+    <!-- Header Element -->
+    <header>
+        <h1><a href="#">Bryan Sebesta</a></h1>
+        {{ partial "header/nav.html" . }}
+    </header>
+
+    <!-- The <main> element shouldn't have a <header> or <footer> element as a direct child. -->
+    <main>
+        {{ block "main" . }}
+        {{ end }}
+        {{ block "footer" . }}
+        {{ end }}
+    </main>
+
+    <div id="banner-bg">&nbsp;</div>
+    <!-- <div id="page-hero-bg">&nbsp;</div> -->
+
+</body>
+
+</html>
+
+</body>
+
 </html>
