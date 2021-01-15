@@ -1,3 +1,22 @@
 {{ define "main" }}
-{{ .Content }}
+
+<article>
+
+    <header>
+        <h1>{{ .Title }}</h1>
+        {{ with .Params.subtitle }}<p>{{ $.Page.Params.subtitle }}</p>{{ end }}</p>
+    </header>
+
+    <section>
+
+        {{ .Content }}
+
+    </section>
+
+    <footer>
+        <time datetime="{{ .Date }}">last updated {{ .Date.Format "Mon Jan 2, 2006" }}</time>
+    </footer>
+
+</article>
+
 {{ end }}

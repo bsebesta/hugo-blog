@@ -1,73 +1,22 @@
 {{ define "main" }}
 
-<h1>Welcome</h1>
-<p>Welcome to my website. This is a typographic text, a test I'm determined to pass.</p>
+<article>
 
-<h2>The height of all envy</h2>
-<p>"The height of all envy" is a <em>nice</em> little phrase. It emerged from my hands, without thought. Perhaps
-    my brain
-    thinks it sounds nice, but my conscious mind recognizes it as pretentious. At least, in this context. </p>
+    <header>
+        <h1>{{ .Title }}</h1>
+        {{ with .Params.subtitle }}<p>{{ $.Page.Params.subtitle }}</p>{{ end }}</p>
+    </header>
 
-<p>"The height of all envy" is a <a href="#">nice little phrase</a>. It emerged from my hands, without thought.
-    Perhaps my brain
-    thinks it sounds nice, but my conscious mind recognizes it as pretentious. At least, in this context. </p>
+    <section>
 
-{{ partial "home/recentposts.html" . }}
+        {{ .Content }}
 
-<p>"The height of all envy" is a nice little phrase. It emerged from my hands, without thought. Perhaps my brain
-    thinks it sounds nice, but my conscious mind recognizes it as pretentious. At least, in this context. </p>
+    </section>
 
-<ul>
-    <li>Item 1</li>
-    <li>Item 2</li>
-    <li>Item 3</li>
-    <li>Item 4</li>
-    <li>Item 5</li>
-    <li>Item 6</li>
-</ul>
+    <footer>
+        <time datetime="{{ .Date }}">last updated {{ .Date.Format "Mon Jan 2, 2006" }}</time>
+    </footer>
 
-<p>"The height of all envy" is a nice little phrase. It emerged from my hands, without thought. Perhaps my brain
-    thinks it sounds nice, but my conscious mind recognizes it as pretentious. At least, in this context. </p>
+</article>
 
-<ol>
-    <li>Item</li>
-    <li>Item</li>
-    <li>Item</li>
-    <li>Item</li>
-    <li>Item</li>
-    <li>Item </li>
-    <li>Item</li>
-    <li>Item</li>
-    <li>Item</li>
-    <li>Item</li>
-    <li>Item</li>
-    <li>Item</li>
-    <li>Item</li>
-</ol>
-
-<p>"The height of all envy" is a nice little phrase. It emerged from my hands, without thought. Perhaps my brain
-    thinks it sounds nice, but my conscious mind recognizes it as pretentious. At least, in this context. </p>
-
-<h3>Envy and Other Vices</h3>
-<p>"The height of all envy" is a nice little phrase. It emerged from my hands, without thought. Perhaps my brain
-    thinks it sounds nice, but my conscious mind recognizes it as pretentious. At least, in this context. </p>
-
-<blockquote>Here lies treasure! The most spectacular treasure you've never heard of. Hahahahaha!</blockquote>
-
-<p>"The height of all envy" is a nice little phrase. It emerged from my hands, without thought. Perhaps my brain
-    thinks it sounds nice, but my conscious mind recognizes it as pretentious. At least, in this context. </p>
-
-<p>"The height of all envy" is a nice little phrase. It emerged from my hands, without thought. Perhaps my brain
-    thinks it sounds nice, but my conscious mind recognizes it as pretentious. At least, in this context. </p>
-
-<h2>The height of all envy</h2>
-<p>"The height of all envy" is a <em>nice</em> little phrase. It emerged from my hands, without thought. Perhaps
-    my brain
-    thinks it sounds nice, but my conscious mind recognizes it as pretentious. At least, in this context. </p>
-
-<p>"The height of all envy" is a <a href="#">nice little phrase</a>. It emerged from my hands, without thought.
-    Perhaps my brain
-    thinks it sounds nice, but my conscious mind recognizes it as pretentious. At least, in this context. </p>
-
-{{ .Content }}
 {{ end }}

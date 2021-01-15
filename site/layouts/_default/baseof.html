@@ -3,22 +3,23 @@
 
 <head>
 
-    <!-- Title -->
     <title>
         {{ block "title" . }}
-        <!-- Blocks may include default content. -->
-        {{ .Site.Title }}
+        {{ .Site.Title }}{{ with .Page.Title }} – {{ $.Page.Title }}{{ end }}
         {{ end }}
     </title>
 
     <!-- Meta Information -->
     <meta charset="utf-8" />
-    <meta name="author" content="Bryan Sebesta">
-    <meta name="description" content="Created X/X/X">
+    <meta name="author" content="{{ $.Site.Params.Author }}">
+    <meta name="description" content="{{ $.Site.Params.Description }}">
 
-    <!-- Styles -->
+    <!-- Disable the Zoom! -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Styles & Art Direction -->
     <link rel="stylesheet" href="https://use.typekit.net/xkp8ekj.css">
-    <link rel="stylesheet" href="/css/style.css?3">
+    <link rel="stylesheet" href="/css/style.css?1">
 
     <!-- Feeds -->
     <link type="application/atom+xml" rel="alternate" href="/feed.xml" title="Blog" />
@@ -26,29 +27,22 @@
 
 </head>
 
-<body id="default-layout">
+<body>
 
+    <!-- Header & Navigation -->
+    <nav id="banner">
 
-    <!-- Header Element -->
-    <header>
-        <h1><a href="#">Bryan Sebesta</a></h1>
-        {{ partial "header/nav.html" . }}
-    </header>
+        {{ partial "nav.html" . }}
 
-    <!-- The <main> element shouldn't have a <header> or <footer> element as a direct child. -->
+    </nav>
+
+    <!-- Main Content -->
     <main>
+
         {{ block "main" . }}
         {{ end }}
-        {{ block "footer" . }}
-        {{ end }}
+
     </main>
-
-    <div id="banner-bg">&nbsp;</div>
-    <!-- <div id="page-hero-bg">&nbsp;</div> -->
-
-</body>
-
-</html>
 
 </body>
 

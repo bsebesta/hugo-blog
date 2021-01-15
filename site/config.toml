@@ -1,6 +1,12 @@
 baseURL = "http://example.org/"
 languageCode = "en-us"
-title = "My New Hugo Site"
+title = "My Website!"
+
+sectionPagesMenu = "main"
+
+[params]
+  Author = "Bryan Sebesta"
+  Description = "The digital garden of Bryan Sebesta"
 
 [taxonomies]
   category = "categories"

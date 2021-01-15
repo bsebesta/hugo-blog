@@ -1,6 +1,18 @@
 ---
 title: "{{ replace .Name "-" " " | title }}"
-date: {{ .Date }}
+subtitle: "A Thing I Said"
+date: "{{ .Date }}"
 draft: true
-is_archetype_working: true
+fp: true
+layout: 
+tags: 
+categories: 
+head: |
+    <style>
+        .post { font-family: fantasy; }
+    </style>
+foot: |
+    <script type="module">
+    </script>
+# This is a test
 ---

@@ -2,6 +2,9 @@
 title: A poem
 description: A description of something dangerous
 date: 2021-01-02
+tags: 
+- poetry
+- something
 ---
 There once was a mouse named Mounce
 He knew Greek, but only an ounce
