@@ -111,7 +111,7 @@
         border: 0;
         vertical-align: baseline;
     }
-    
+
     main,
     article,
     aside,
@@ -126,28 +126,28 @@
     section {
         display: block;
     }
-    
+
     *, :after, :before {
         -moz-box-sizing: border-box;
         -webkit-box-sizing: border-box;
         box-sizing: border-box;
     }
-    
+
     table {
         border-collapse: collapse;
         border-spacing: 0;
     }
-    
+
     ol,
     ul {
         list-style: none;
     }
-    
-    
+
+
     /** ============================================================
         COLORS
         ============================================================ */
-    
+
     /**
      * Color notes
      *
@@ -157,7 +157,7 @@
      * to work well in either dark or light mode.
      *
      */
-    
+
      :root {
         --color-bg: #F5F5F2;
         --color-text: #222222;
@@ -165,25 +165,25 @@
         --color-accent-light: hsl(60,10%,60%);
         --color-accent-lighter: hsl(60,10%,80%);
     }
-    
+
     :root {
         color: var(--color-text);
     }
-    
+
     @media (prefers-color-scheme: dark) {
         :root {
-    
+
         }
     }
-    
-    
+
+
     /** ============================================================
         TYPOGRAPHY
         ============================================================ */
-    
+
     /** Font Family & Weights
         ============================================================ */
-    
+
     /**
      * Font family notes
      *
@@ -194,24 +194,24 @@
      * doubt I'll find a style that suits me better in the future. But for now, Scala it is.
      *
      */
-    
+
      :root {
         --font-family-sans: 'ff-scala-sans-pro', sans-serif;
-        --font-family-serif: 'ff-scala', sans-serif;
+        --font-family-serif: 'ff-scala', 'Arial',serif;
         --font-weight-regular: 400;
         --font-weight-bold: 700;
-    
+
         font-family: var(--font-family-serif);
         font-weight: var(--font-weight-regular);
         font-feature-settings: "kern", "liga", "clig", "calt", "onum", "pnum";
     }
-    
+
     p,
     ul,
     ol {
         font-family: var(--font-family-serif);
     }
-    
+
     h1,
     h2,
     h3,
@@ -220,18 +220,18 @@
     h6 {
         font-weight: var(--font-weight-regular);
     }
-    
+
     em,i {
         font-style: italic;
     }
-    
+
     b {
         font-weight: var(--font-weight-bold);
     }
-    
+
     /** Font-size
         ============================================================ */
-    
+
     /**
      * Modular scale calculation
      *
@@ -265,13 +265,13 @@
      * 1.618 – Golden Ratio
      *
      */
-    
+
     :root {
-    
+
         font-size: 20px;
-    
+
         --modular-scale: 1.250;
-    
+
         --scale-5: calc(var(--scale-4) / var(--modular-scale));
         --scale-4: calc(var(--scale-3) / var(--modular-scale));
         --scale-3: calc(var(--scale-2) / var(--modular-scale));
@@ -294,12 +294,12 @@
         --scale14: calc(var(--scale13) * var(--modular-scale));
         --scale15: calc(var(--scale14) * var(--modular-scale));
     }
-    
+
     h1 { font-size: var(--scale4); }
     h2 { font-size: var(--scale2); }
     h3 { font-size: var(--scale2); }
     h4 { font-size: var(--scale1); }
-    
+
     p,
     li,
     blockquote {
@@ -309,10 +309,10 @@
     time {
         font-size: var(--scale-1);
     }
-    
+
     /** Line Measure & Side-padding
         ============================================================ */
-    
+
     /**
      * The measure is implemented, in most of my layouts, in the grid
      * system. Look down there to see where it's implemented.
@@ -331,7 +331,7 @@
      *
      *
      */
-    
+
      :root {
         --measure: 70ch;
         --sidebar-measure: 15ch;
@@ -340,23 +340,23 @@
         --letter-spacing-loose: 0.125em;
         --side-padding: 2ch;
     }
-    
+
     p,
     li,
     blockquote {
         letter-spacing: 0.0000em;
     }
-    
+
     /**
      * Note to self: David Sleight has several media queries that affect
      * the font size. I need to look at these and see what the utility is
      * in each case.
      *
      */
-    
+
      /** Line Height
         ============================================================ */
-    
+
     :root {
         --line-height-scale: 1.125;
         --line-height-shortest: calc(var(--line-height-shorter) / var(--line-height-scale));
@@ -364,14 +364,14 @@
         --line-height-base: 1.4; /* Original 1.25 */
         --line-height-taller: calc(var(--line-height-base) * var(--line-height-scale));
         --line-height-tallest: calc(var(--line-height-taller) * var(--line-height-scale));
-    
+
         line-height: var(--line-height-base);
     }
-    
+
     p + p {
         margin-top: 1rem;
     }
-    
+
     h1 {
         margin-top: 0;
         margin-bottom: 0;
@@ -380,27 +380,27 @@
     main>article>header {
         margin-bottom: 1.5rem;
     }
-    
+
     main > h1:first-of-type,
     section > h1:first-of-type,
     article > h1:first-of-type {
         margin-top: 0;
     }
-    
+
     h2 {
         margin-top: 1.4rem;
         margin-bottom: .3rem;
     }
-    
+
         h1 + h2 {
             margin-top: 0;
         }
-    
+
     h3 {
         margin-top: 1rem;
         margin-bottom: .3rem;
     }
-    
+
     p + ul,
     p + ol,
     p + blockquote,
@@ -409,21 +409,21 @@
     p + hr {
         margin: 1rem 0;
     }
-    
+
     ul,
     ol {
         line-height: var(--line-height-taller);
         margin-bottom: 1rem;
     }
-    
-    
+
+
     /** ============================================================
         KEY TYPOGRAPHIC ELEMENTS
         ============================================================ */
-    
+
     /** Links
         ============================================================ */
-    
+
     main a:link,
     main a:visited {
         color: var(--color-accent);
@@ -431,47 +431,47 @@
         text-decoration: none;
         font-style: italic;
     }
-    
+
     main a:hover,
     main a:active {
         color: var(--color-accent);
         text-decoration: underline;
     }
-    
+
     /** Lists
         ============================================================ */
-    
+
     /* This is the default list type within the "main" area */
-    
+
     main ul {
         list-style-type: none;
     }
-    
+
     main ul>li {
         margin-left: .5rem;
     }
-    
+
     main ul>li::before {
         content: "\00BB";
         margin-right: .5rem;
         color: var(--color-accent);
     }
-    
+
     /* This is the list-style I when I'm pointing to related content */
-    
+
     ul.related-links {
         list-style-type: none;
     }
-    
+
     ul.related-links>li {
         margin-left: .5rem;
     }
-    
+
     ul.related-links>li::before {
         content: "↬";
         margin-right: .5rem;
     }
-    
+
     ul.related-links a:link,
     ul.related-links a:visited {
         font-weight: var(--font-weight-bold);
@@ -479,42 +479,42 @@
         text-decoration: underline;
         color: var(--color-text);
     }
-    
+
     ul.related-links a:hover,
     ul.related-links a:active {
-        
+
     }
-    
+
     /** Blockquotes
         ============================================================ */
-    
+
     blockquote {
         padding-left: .5rem;
         margin-left: 1rem;
         border-left: solid 5px var(--color-accent);
         font-style: italic;
     }
-    
+
     /** Miscellanea
         ============================================================ */
-    
+
     code {
         background-color: var(--color-accent-lighter);
         border-radius: 3px;
         padding: .1rem;
     }
-    
+
     pre code {
         display: block;
         background-color: var(--color-accent-lighter);
         border-radius: 3px;
         padding: 1rem;
     }
-    
+
     em {
         font-style: italic;
     }
-    
+
     time {
         display: inline-block;
         width: 100%;
@@ -522,43 +522,43 @@
         color: var(--color-accent-light);
         font-style: italic;
     }
-    
+
     p {
         hyphens: auto;
     }
-    
+
     ::selection {
         background-color: var(--color-accent-lighter);
         color: var(--color-text) !important;
     }
-    
+
     hr {
         border: solid .5px var(--color-accent);
         margin: 2rem 3rem;
     }
-    
-    
-    
-    
-    
-    
+
+
+
+
+
+
     /** ============================================================
         LAYOUT
         ============================================================ */
-    
+
     /** The Main Grid
         ============================================================ */
-    
+
     body {
         display: flex;
         flex-flow: column nowrap;
         justify-content: flex-start;
         align-items: center;
     }
-    
+
     /** Vertical Rhythm
         ============================================================ */
-    
+
     #banner {
         margin: .5rem 0 3rem 0;
     }
@@ -570,10 +570,10 @@
     body>footer {
         margin-top: 4rem;
     }
-    
+
     /** Horizontal Rhythm
         ============================================================ */
-    
+
     #banner,
     #breadcrumb,
     main,
@@ -581,7 +581,7 @@
     body>footer {
         width: min(100%,var(--measure));
     }
-    
+
     #banner,
     main>*>header,
     main>*>nav,
@@ -592,22 +592,22 @@
     #breadcrumb {
         padding: 0 var(--side-padding);
     }
-    
+
     /** Banner
         ============================================================ */
-    
+
     #banner {
         display: flex;
         flex-flow: column wrap;
         align-items: center;
     }
-    
+
     #banner a:link,
     #banner a:visited {
         color: var(--color-text);
         text-decoration: none;
     }
-    
+
     #banner a:hover,
     #banner a:active {
         color: var(--color-text);
@@ -621,13 +621,13 @@
     #banner a.menu-home {
         font-variant: small-caps;
     }
-    
+
     #banner>span {
         display: block;
         font-size: var(--scale1);
         font-weight: var(--font-weight-bold);
     }
-    
+
     #banner ul {
         display: flex;
         flex-flow: row wrap;
@@ -635,78 +635,78 @@
         align-items: center;
         margin-bottom: 0;
     }
-    
+
     #banner ul>li {
         display: inline-block;
         margin-right: 0.6rem;
         font-size: var(--scale-1);
     }
-    
+
     /** Breadcrumb
         ============================================================ */
-    
+
     #breadcrumb ul {
         display: flex;
         flex-flow: row wrap;
         list-style-type: none;
     }
-    
+
     #breadcrumb li {
         font-size: var(--scale-1);
     }
-    
+
     #breadcrumb li::after {
         content: ">";
         color: var(--color-accent);
         padding: 0 .5rem;
     }
-    
+
     #breadcrumb li:last-of-type::after {
         content: "";
         padding: 0;
     }
-    
+
     #breadcrumb a:link,
     #breadcrumb a:visited {
         color: var(--color-accent-light);
         text-decoration: none;
     }
-    
+
     #breadcrumb a:hover,
     #breadcrumb a:active {
         text-decoration: underline;
     }
-    
+
     /** Header
         ============================================================ */
-    
+
         main>article>header>p {
             font-size: var(--scale1);
             margin: 0;
         }
-    
+
     /** Sidebar
         ============================================================ */
-    
+
     aside#sidebar {
         visibility: hidden;
         display: none;
     }
-    
+
     /** Below-page Asides
         ============================================================ */
-    
+
     aside#related>section>h1 {
         font-size: var(--scale2);
     }
-    
+
     aside#related em {
         font-style: italic;
     }
-    
+
     /** Body Footer
         ============================================================ */
-    
+
     body>footer {
         text-align: center;
         color: var(--color-accent-lighter);
@@ -714,7 +714,7 @@
         bottom: 0;
         padding: 1rem 0;
     }
-    
+
     body>footer p {
         font-size: var(--scale-1);
     }

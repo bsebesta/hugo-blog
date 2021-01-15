@@ -11,7 +11,7 @@
 
         <ul>
             {{ range .RegularPages }}
-            <li><a href="{{ .Permalink }}">{{ .Date.Format "Jan 2" }} &mdash; {{ .Title }}</a></li>
+            <li><a href="{{ .Permalink }}">{{ .Date.Format "Jan 2" }} &mdash; {{ .Title }}</a> by {{ .Params.authors }}</li>
             {{ end }}
         </ul>
 
