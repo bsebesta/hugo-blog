@@ -9,7 +9,46 @@
 
     <section>
 
-        {{ .Content }}
+        <p>Welcome to my home page.</p>
+
+        <h2>Design & Technology</h2>
+        <p>By day, I work as a UX designer for RAIN, an agency based in New York City. Below are some recent notes and thoughts centered around design and tech.</p>
+
+        <ul>
+            {{ range index .Site.Taxonomies.categories "design-and-tech" | first 3 }}
+            <li>{{ .Section }}, <a href="{{ .Permalink }}">{{ .Date.Format "Jan 2" }} &mdash; {{ .Title }}</a></li>
+            {{ end }}
+        </ul>
+
+        <h2>Faith & Scripture</h2>
+        <p>I’m a Latter-day Saint (Mormon), and try to live a thoughtful life. Below are some reflections, notes, and thoughts on a life of faith.</p>
+
+        <ul>
+            {{ range index .Site.Taxonomies.categories "faith" | first 3 }}
+            <li>{{ .Section }}, <a href="{{ .Permalink }}">{{ .Date.Format "Jan 2" }} &mdash; {{ .Title }}</a></li>
+            {{ end }}
+        </ul>
+
+        <h2>Books</h2>
+        <p>I love to read. Here are some of the recent books I’ve read.</p>
+
+        <ul>
+            {{ range where .Site.RegularPages "Section" "books" | first 3 }}
+            <li>{{ .Section }}, <a href="{{ .Permalink }}">{{ .Date.Format "Jan 2" }} &mdash; {{ .Title }}</a></li>
+            {{ end }}
+        </ul>
+
+        <h2>Personal</h2>
+        <p>I don’t have social media, so for more personal stuff, you can track that here.</p>
+
+        <ul>
+            {{ range index .Site.Taxonomies.categories "personal" | first 3 }}
+            <li>{{ .Section }}, <a href="{{ .Permalink }}">{{ .Date.Format "Jan 2" }} &mdash; {{ .Title }}</a></li>
+            {{ end }}
+        </ul>
+
+        <h2>More</h2>
+        <p>In addition to these, you can <a href="/now/">see what I'm doing now</a>, or look around my <a href="/wiki/">curated wiki of topics that interest me</a>. You can also <a href="/feed/">subscribe using RSS</a>!</p>
 
     </section>
 

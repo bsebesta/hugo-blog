@@ -1,8 +1,11 @@
 baseURL = "http://example.org/"
 languageCode = "en-us"
 title = "My Website!"
+copyright = "This shows up in my RSS"
 
 sectionPagesMenu = "main"
+
+
 
 [params]
   Author = "Bryan Sebesta"

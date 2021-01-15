@@ -9,7 +9,7 @@ start_date: "2021-01-02"
 authors:
 - Makoto Fujimura
 categories:
-- religion
+- faith
 tags:
 - art
 - religion

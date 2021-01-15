@@ -9,7 +9,7 @@ authors:
 - Terryl Givens
 - Fiona Givens
 categories:
-- religion
+- faith
 tags:
 - words
 - restoration
