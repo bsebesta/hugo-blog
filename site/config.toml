@@ -1,7 +1,7 @@
-baseURL = "http://example.org/"
+baseURL = "https://www.bryansebesta.blog/"
 languageCode = "en-us"
-title = "My Website!"
-copyright = "This shows up in my RSS"
+title = "Bryan Sebesta's Digital Garden"
+copyright = "© Copyright 2021 Bryan Sebesta"
 
 sectionPagesMenu = "main"
 
