@@ -8,6 +8,15 @@
     </header>
 
     <section>
+        {{ with .Site.Taxonomies.tags }}<ul class="tag-cloud">
+            {{ range $key, $value := . }}
+            <li><a href="/tags/{{ $key | urlize }}/">{{ $key }} <span>{{ .Count }}</span></a></li>
+            {{ end }}
+        </ul>{{ end }}
+
+    </section>
+
+    <section>
 
         {{ range .RegularPages.GroupByDate "2006" }}
         <h2>{{ .Key }}</h2>
@@ -17,6 +26,14 @@
             {{ end }}
         </ul>
         {{ end }}
+
+        <!--
+        <ul class="dated-page-list">
+            {{ range .RegularPages }}
+            <li><time>{{ .Date.Format "Jan 2" }}</time> <a href="{{ .Permalink }}">{{ .Title }}</a></li>
+            {{ end }}
+        </ul>
+    -->
 
     </section>
 

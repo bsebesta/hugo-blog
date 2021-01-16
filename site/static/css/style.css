@@ -159,11 +159,14 @@
      */
 
      :root {
-        --color-bg: #F5F5F2;
-        --color-text: #222222;
-        --color-accent: hsl(60,10%,40%);
-        --color-accent-light: hsl(60,10%,60%);
-        --color-accent-lighter: hsl(60,10%,80%);
+        --color-bg: hsl(60,13%,95%);
+        --color-bg-banner: hsl(60,13%,92%);
+        --color-text: hsl(0, 0%, 13%);
+        --color-text-light: hsl(0, 0%, 63%);
+        --color-text-lighter: hsl(0, 0%, 73%);
+        --color-accent: hsl(0,80%,60%);
+        --color-accent-light: hsl(0,80%,65%);
+        --color-accent-lighter: hsl(0,80%,72%);
     }
 
     :root {
@@ -196,8 +199,10 @@
      */
 
      :root {
+        --font-family-serif: 'Merriweather', serif;
         --font-family-sans: 'ff-scala-sans-pro', sans-serif;
-        --font-family-serif: 'ff-scala', 'Arial',serif;
+        --font-family-mono: 'Menlo','Monaco','Consolas','Andale Mono','lucida console','Courier New',monospace;
+        --font-weight-light: 300;
         --font-weight-regular: 400;
         --font-weight-bold: 700;
 
@@ -416,6 +421,11 @@
         margin-bottom: 1rem;
     }
 
+        /* This makes sure that nested lists don't appear as separate lists */
+        li>ul {
+            margin-bottom: 0;
+        }
+
 
     /** ============================================================
         KEY TYPOGRAPHIC ELEMENTS
@@ -455,6 +465,89 @@
         content: "\00BB";
         margin-right: .5rem;
         color: var(--color-accent);
+    }
+
+    /* Dated Page List */
+
+    ul.dated-page-list {
+        display: flex;
+        flex-flow: column nowrap;
+        list-style-type: none;
+        color: var(--color-text-light);
+    }
+
+    ul.dated-page-list li {
+        display: inline-block;
+        margin: 0;
+        padding: 0;
+    }
+
+    ul.dated-page-list li::before {
+        content: "";
+        margin: 0;
+        padding: 0;
+    }
+
+    ul.dated-page-list li>time {
+        display: inline-block;
+        width: 6ch;
+        text-align: right;
+        padding: 0;
+        margin-right: .5rem;
+        font-size: var(--scale-1);
+        font-family: var(--font-family-mono);
+        color: var(--color-text-lighter);
+    }
+
+    /* Tag Cloud */
+
+    ul.tag-cloud {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: flex-start;
+        align-items: flex-start;
+        list-style-type: none;
+    }
+
+    ul.tag-cloud li {
+        display: inline-block;
+        margin: 0;
+        padding: 0;
+    }
+
+    ul.tag-cloud li::before {
+        content: "";
+        margin: 0;
+        padding: 0;
+    }
+
+    ul.tag-cloud a {
+        display: inline-block;
+        background-color: var(--color-accent);
+        border-radius: .5rem;
+        padding: .2rem .4rem;
+        margin: .2rem .2rem;
+        transition: background-color .5s ease;
+    }
+
+    ul.tag-cloud a:link,
+    ul.tag-cloud a:visited {
+        color: var(--color-bg);
+        text-decoration: none;
+        font-weight: var(--font-weight-regular);
+        font-size: var(--scale-1);
+    }
+
+    ul.tag-cloud a:hover,
+    ul.tag-cloud a:active {
+        background-color: var(--color-accent-light);
+    }
+
+    /* Superscripted numbers */
+    ul.tag-cloud a>span {
+        display: inline-block;
+        font-size: var(--scale-2);
+        vertical-align: top;
     }
 
     /* This is the list-style I when I'm pointing to related content */
@@ -515,7 +608,7 @@
         font-style: italic;
     }
 
-    time {
+    article>footer>time {
         display: inline-block;
         width: 100%;
         text-align: right;
@@ -560,7 +653,10 @@
         ============================================================ */
 
     #banner {
-        margin: .5rem 0 3rem 0;
+        width: 100%;
+        padding: .5rem 0;
+        margin-bottom: 3rem;
+        background-color: var(--color-bg-banner);
     }
 
     main>article>footer {
@@ -574,7 +670,6 @@
     /** Horizontal Rhythm
         ============================================================ */
 
-    #banner,
     #breadcrumb,
     main,
     body>aside,
@@ -582,7 +677,6 @@
         width: min(100%,var(--measure));
     }
 
-    #banner,
     main>*>header,
     main>*>nav,
     main>*>footer,
@@ -610,8 +704,8 @@
 
     #banner a:hover,
     #banner a:active {
-        color: var(--color-text);
-        text-decoration: underline;
+        color: var(--color-accent);
+        text-decoration: none;
     }
 
     #banner a.menu-active {

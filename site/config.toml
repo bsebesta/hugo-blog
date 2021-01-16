@@ -5,7 +5,8 @@ copyright = "© Copyright 2021 Bryan Sebesta"
 
 sectionPagesMenu = "main"
 
-
+[permalinks]
+  posts = "/:year/:month/:day/:title/"
 
 [params]
   Author = "Bryan Sebesta"
