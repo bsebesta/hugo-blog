@@ -1,61 +1,28 @@
 {{ define "main" }}
 
-<article>
-
-    <header>
-        <h1>{{ .Title }}</h1>
-        {{ with .Params.subtitle }}<p>{{ $.Page.Params.subtitle }}</p>{{ end }}</p>
-    </header>
+<section>
 
     <section>
 
-        <p>Welcome to my home page.</p>
-
-        <h2>Design & Technology</h2>
-        <p>By day, I work as a UX designer for RAIN, an agency based in New York City. Below are some recent notes and thoughts centered around design and tech.</p>
-
-        <ul>
-            {{ range index .Site.Taxonomies.categories "design-and-tech" | first 3 }}
-            <li>{{ .Section }}, <a href="{{ .Permalink }}">{{ .Date.Format "Jan 2" }} &mdash; {{ .Title }}</a></li>
-            {{ end }}
-        </ul>
-
-        <h2>Faith & Scripture</h2>
-        <p>I’m a Latter-day Saint (Mormon), and try to live a thoughtful life. Below are some reflections, notes, and thoughts on a life of faith.</p>
-
-        <ul>
-            {{ range index .Site.Taxonomies.categories "faith" | first 3 }}
-            <li>{{ .Section }}, <a href="{{ .Permalink }}">{{ .Date.Format "Jan 2" }} &mdash; {{ .Title }}</a></li>
-            {{ end }}
-        </ul>
-
-        <h2>Books</h2>
-        <p>I love to read. Here are some of the recent books I’ve read.</p>
-
-        <ul>
-            {{ range where .Site.RegularPages "Section" "books" | first 3 }}
-            <li>{{ .Section }}, <a href="{{ .Permalink }}">{{ .Date.Format "Jan 2" }} &mdash; {{ .Title }}</a></li>
-            {{ end }}
-        </ul>
-
-        <h2>Personal</h2>
-        <p>I don’t have social media, so for more personal stuff, you can track that here.</p>
-
-        <ul>
-            {{ range index .Site.Taxonomies.categories "personal" | first 3 }}
-            <li>{{ .Section }}, <a href="{{ .Permalink }}">{{ .Date.Format "Jan 2" }} &mdash; {{ .Title }}</a></li>
-            {{ end }}
-        </ul>
-
-        <h2>More</h2>
-        <p>In addition to these, you can <a href="/now/">see what I'm doing now</a>, or look around my <a href="/wiki/">curated wiki of topics that interest me</a>. You can also <a href="/feed/">subscribe using RSS</a>!</p>
+        {{ .Content }}
 
     </section>
 
-    <footer>
-        <time datetime="{{ .Date }}">last updated {{ .Date.Format "Mon Jan 2, 2006" }}</time>
-    </footer>
+    <section>
 
-</article>
+        {{ range $index, $value := (where .Site.Pages "Section" "notes").GroupByDate "2006" }}
+        <h2>{{ .Key }}</h2>
+        <ul class="dated-page-list">
+            {{ range .Pages }}
+                {{ if .IsSection }}{{ else }}
+                <li><time>{{ .Date.Format "Jan 2" }}</time> <a href="{{ .Permalink }}">{{ .Title }}</a></li>
+                {{end}}
+            {{ end }}
+        </ul>
+        {{ end }}
+
+    </section>
+
+</section>
 
 {{ end }}

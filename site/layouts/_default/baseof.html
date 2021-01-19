@@ -20,12 +20,7 @@
     <link rel="stylesheet" href="/css/style.css?1">
 
     <!-- Feeds -->
-    <link rel="alternate" href="/index.xml" type="application/rss+xml" title="All Activity">
-    <link rel="alternate" href="/categories/design-and-tech/index.xml" type="application/rss+xml" title="Notes on Design & Tech">
-    <link rel="alternate" href="/categories/faith/index.xml" type="application/rss+xml" title="Notes on Faith">
-    <link rel="alternate" href="/categories/personal/index.xml" type="application/rss+xml" title="Personal Notes">
-    <link rel="alternate" href="/books/index.xml" type="application/rss+xml" title="Book Reviews">
-
+    <link rel="alternate" href="/index.xml" type="application/rss+xml" title="Bryan Sebesta's Posts">
 </head>
 
 <body>
@@ -33,7 +28,12 @@
     <!-- Header & Navigation -->
     <nav id="banner">
 
-        {{ partial "nav.html" . }}
+        <ul>
+    
+            <li><a class="menu-home{{ with .IsHome }} menu-active{{end}}" href="/" title="Home">Bryan Sebesta</a></li>
+            <li><a class="menu-home{{ if eq .Title "About" }} menu-active{{end}}" href="/about/" title="About">About</a></li>
+                    
+        </ul>
 
     </nav>
 

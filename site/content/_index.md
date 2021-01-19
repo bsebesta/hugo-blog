@@ -1,5 +1,3 @@
 ---
-title: Home
-subtitle: Welcome to my website.
+Title: Welcome!
 ---
-This is my small corner of the internet. A work-in-progress.

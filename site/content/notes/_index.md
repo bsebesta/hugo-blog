@@ -1,4 +1,4 @@
 ---
 title: Notes
+weight: 1
 ---
-Here are some things that I've been thinking about.

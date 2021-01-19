@@ -9,11 +9,7 @@
 
     <section>
 
-        <ul>
-            {{ range .RegularPages }}
-            <li><a href="{{ .Page.Permalink }}">{{ .Page.Title }}</a></li>
-            {{ end }}
-        </ul>
+        {{ partial "lists/list-pages-by-year-with-section.html" . }}
 
     </section>
 
