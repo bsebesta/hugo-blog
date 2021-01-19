@@ -1,6 +1,6 @@
 ---
 title: The Giant of Paralysis, Conquered by Settling
-date: 2021-01-18
+date: "2021-01-18T21:15:12-07:00"
 tags:
 - creativity
 ---
