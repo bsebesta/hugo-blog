@@ -298,7 +298,7 @@
     }
 
     h1 { font-size: var(--scale4); }
-    h2 { font-size: var(--scale2); }
+    h2 { font-size: var(--scale3); }
     h3 { font-size: var(--scale2); }
     h4 { font-size: var(--scale1); }
 
@@ -830,4 +830,27 @@
 
     body>footer p {
         font-size: var(--scale-1);
+    }
+
+    /** Index
+        ============================================================ */
+
+    .index-subsection {
+        background-color: var(--color-secondary-accent-lighter);
+        padding: 1rem var(--side-padding);
+        margin: 1rem 0;
+    }
+
+    .index-subsection>h2 {
+        margin-top: 0;
+    }
+
+    .index-relatedtags {
+        background-color: var(--color-secondary-accent-lighter);
+        padding: 1rem var(--side-padding);
+        margin-top: 1rem;
+    }
+
+    .index-relatedtags>h2 {
+        margin-top: 0;
     }
